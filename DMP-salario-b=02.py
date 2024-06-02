@@ -76,7 +76,7 @@ ax.plot(w, VFVV_h, color='blue', linewidth=2, label=r"$V_{F}-V_{V}, A_{\text{hig
 
 
 # labels
-plt.legend()
+plt.legend(loc='upper left')
 ax.set_title(f"Salario en equilibrio - modelo DMP - b = {b}")
 ax.set_ylabel('Beneficios')
 ax.set_xlabel('Salarios')

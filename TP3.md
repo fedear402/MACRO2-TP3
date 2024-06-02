@@ -59,8 +59,6 @@ donde $\gamma$ es el poder de negociación del trabajador. Igual poder de negoci
 2
 
 
-
-
 ---
 BIBLIOGRAFIA
 

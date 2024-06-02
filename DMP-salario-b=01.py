@@ -48,8 +48,8 @@ VFVV_l = (A_l-w)/(alpha+b+r)
 
 # ploteamos
 fig, ax = plt.subplots()
-ax.plot(w, VEVU_l, color='red', linewidth=2, linestyle="--") 
-ax.plot(w, VFVV_l, color='blue', linewidth=2, linestyle="--") 
+ax.plot(w, VEVU_l, color='red', linewidth=2, linestyle="--", label=r"$V_{E}-V_{U}, A_{\text{low}}$") 
+ax.plot(w, VFVV_l, color='blue', linewidth=2, linestyle="--", label=r"$V_{F}-V_{V}, A_{\text{low}}$")  
 
 
 ##################################################
@@ -70,11 +70,12 @@ VEVU_h = w/(a+b+r)
 VFVV_h = (A_h-w)/(alpha+b+r)
 
 
-ax.plot(w, VEVU_h, color='red', linewidth=2) 
-ax.plot(w, VFVV_h, color='blue', linewidth=2) 
+ax.plot(w, VEVU_h, color='red', linewidth=2, label=r"$V_{E}-V_{U}, A_{\text{high}}$") 
+ax.plot(w, VFVV_h, color='blue', linewidth=2, label=r"$V_{F}-V_{V}, A_{\text{high}}$") 
+
 
 # labels
-plt.legend([r"$V_{E}-V_{U}$", r"$V_{F}-V_{V}$"])
+plt.legend()
 ax.set_title(f"Salario en equilibrio - modelo DMP - b = {b}")
 ax.set_ylabel('Beneficios')
 ax.set_xlabel('Salarios')
@@ -85,7 +86,7 @@ ax.axvline(x=w_h_eq, color='black', linestyle=':', ymin=0,
            ymax=(w_h_eq - ax.get_ylim()[0]) / (ax.get_ylim()[1] - ax.get_ylim()[0])) 
 
 ax.axvline(x=w_l_eq, color='black', linestyle=':', ymin=0, 
-           ymax=(w_l_eq - ax.get_ylim()[0]) / (ax.get_ylim()[1] - ax.get_ylim()[0]) + 0.075) 
+           ymax=(w_l_eq - ax.get_ylim()[0]) / (ax.get_ylim()[1] - ax.get_ylim()[0]) + 0.07) 
 
 
 # agrega label en el tick de w de equilibrio
@@ -96,6 +97,7 @@ del t[2]
 del t[-5]
 labels = [round(i, 2) for i in t]
 plt.xticks(ticks=t, labels = labels, fontsize=10)
+plt.ylim([0, 2])
 
 fig.savefig("DMP-salario-b=01.png")
 plt.show()
